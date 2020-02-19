@@ -1,8 +1,20 @@
 ## 常见问题
 
 - `onChange`的行为变成了`onInput`, 即每次内容变化就会触发, 而不是等到`Enter`输入
+  解决方式, 监听键盘事件
+
+  ```tsx
+  <input type="text" onKeyDown={(e) => {
+    if (e.key === 'Enter') {
+      console.log('input change')
+    }
+  }}></input>
+  ```
+
 - `React`对事件进行了包裹, 当使用`TS`时, 不同事件有相应的类型, 如`onBlur`对应`React.FocusEvent<HTMLInputElement>`. 参考https://zh-hans.reactjs.org/docs/events.html
+
 - 在`React`里使用`TS`, 参考https://create-react-app.dev/docs/adding-typescript/
+
 - 列表渲染时`key`不能在子组件内获得
 
 ## 技巧与Tips
@@ -66,4 +78,14 @@ handler = () => {
 }
 <button onClick={this.handler}></button>
 ```
+
+## 常见需求
+
+- 渲染string为html
+
+  ```tsx
+  <span dangerouslySetInnerHTML={{ __html: 'html string' }}></span>
+  ```
+
+  
 
