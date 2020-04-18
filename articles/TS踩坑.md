@@ -47,9 +47,9 @@
   }
   ```
   
-  此时`__dirname`即为`contex`的路径
+  此时`__dirname`即为当前文件所在文件夹相对于`contex`的路径
   
-  [webpack文档的解释]( https://webpack.js.org/configuration/node/#node__dirname )
+  [webpack文档的解释](https://webpack.js.org/configuration/node/#node__dirname)
   
 - 使用 [MediaStream Recording API](https://devdocs.io/dom/mediastream_recording_api) 时, 需要安装"@types/dom-mediacapture-record"依赖以提供类型支持
 

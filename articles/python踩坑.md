@@ -67,6 +67,11 @@ Instead of typing `env/bin/python` and `env/bin/pip` every time, we can run a sc
 
 This script, which can be executed with `source env/bin/activate`, simply adjusts a few variables in your shell (temporarily) so that when you type `python`, you actually get the Python binary *inside* the virtualenv instead of the global one 
 
+### 常见问题
+
+- 整个文件夹更改了上级目录以后执行pip错误
+  检查`activate`脚本中的环境变量`VIRTUAL_ENV`, 更改后重新激活
+
 ### venv(适用python3, 自从python3.3起包含在标准库中)
 
 ## virtualenv多版本python共存
@@ -88,4 +93,16 @@ This script, which can be executed with `source env/bin/activate`, simply adjust
 包管理工具在国内日常需要换源, 不然速度极慢
 
 源管理工具: pqi(类似nrm)
+
+# 编写辅助
+
+## 静态类型检查
+
+Python: [mypy]( http://mypy-lang.org/ )
+
+Microsoft: [pyright]( https://github.com/microsoft/pyright )
+
+Google: [pytype]( https://github.com/google/pytype )
+
+Facebook: [pyre-check]( https://github.com/facebook/pyre-check )
 

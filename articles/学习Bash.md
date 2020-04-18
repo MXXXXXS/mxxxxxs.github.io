@@ -85,3 +85,10 @@ command > filename会把输出输出到一个file内, 比如`echo hello world > 
 后台运行
 
 在命令后
+
+## 设置代理
+
+```bash
+export http_proxy=http://127.0.0.1:8001
+export https_proxy=http://127.0.0.1:8001
+```
