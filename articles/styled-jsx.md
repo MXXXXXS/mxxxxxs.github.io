@@ -15,7 +15,7 @@
 
 # 常见报错
 
-组件可以包含多个  <style jsx>  元素，但多个  <style jsx>  元素必须是兄弟元素，不可以是父子关系，否则会报错：
+### 组件可以包含多个  <style jsx>  元素，但多个  <style jsx>  元素必须是兄弟元素，不可以是父子关系，否则会报错：
 
 > SyntaxError: Detected nested style tag:
 > styled-jsx only allows style tags to be direct descendants (children) of the outermost JSX element i.e. the subtree root.
@@ -74,3 +74,55 @@ return (
 这就会报错.
 
 解决方法是将列表渲染提出来写成一个单独的组件, 再引入.
+
+### 样式没有应用到元素上
+
+`<style jsx>`元素好像只能接受简单的字符串或表达式
+
+参考:  https://github.com/zeit/styled-jsx/issues/595 
+
+```tsx
+function GridTile({
+  indexOfW,
+  indexOfH,
+}: {
+  indexOfW: number;
+  indexOfH: number;
+}) {
+  const color = `rgb(
+  ${Math.random() * 100 + 100},
+  ${Math.random() * 100 + 100},
+  ${Math.random() * 100 + 100}
+)`;
+  return (
+    <div className={`tile ${indexOfW}-${indexOfH}`}>
+      {`${indexOfW}-${indexOfH}`}
+      {/* style applied */}
+      <style jsx>{`
+        .tile {
+          background-color: ${color};
+          justify-self: stretch;
+          align-self: stretch;
+          grid-column: ${indexOfH + 1};
+          grid-row: ${indexOfW + 1};
+        }
+      `}</style>
+      {/* style not applied */}
+      {/* <style jsx>{`
+        .tile {
+          background-color: rgb(
+            ${Math.random() * 100 + 100},
+            ${Math.random() * 100 + 100},
+            ${Math.random() * 100 + 100}
+          );
+          justify-self: stretch;
+          align-self: stretch;
+          grid-column: ${indexOfH + 1};
+          grid-row: ${indexOfW + 1};
+        }
+      `}</style> */}
+    </div>
+  );
+}
+```
+

@@ -229,6 +229,16 @@ miktex装包的位置`C:\Program Files\MiKTeX 2.9\scripts`
 
 输出: $\lim_{x\to2}\frac{xˆ2+3x-10}{x-2}$
 
+## 几种定义命令的命令区别
+
+`\newcommand` defines a new command, and makes an error if it is already defined.
+
+`\renewcommand` redefines a predefined command, and makes an error if it is not yet defined.
+
+`\providecommand` defines a new command if it isn't already defined.
+
+[参考](https://tex.stackexchange.com/a/36178/209156)
+
 ## 参数可选
 
 命令的第一个参数可设为可选, 形式如下
@@ -242,3 +252,23 @@ miktex装包的位置`C:\Program Files\MiKTeX 2.9\scripts`
 使用: `\xy, \xy[y]`
 
 输出: $\textbf{x}, \textbf{y}$
+
+# ctex相关
+
+## \ctexset
+
+在使用`\ctexset`命令定义一些标题样式时, 会有类似报错
+
+`LaTeX3: The key 'ctex/section' is unknown and is being ignored.`
+
+这个问题隐蔽在ctex的手册中(第3页), " 宏包ctex.sty提供全部功能，但**默认不开启章节标题设置功能**，需要使用heading选项来开启 "
+
+`\usepackage[UTF8,heading = true]{ctex}`
+
+# 页眉页脚设置
+
+使用包`fancyhdr`
+
+## 奇偶页设置
+
+需要`\documentclass[a4paper, twoside]{article}`加上`twoside`
