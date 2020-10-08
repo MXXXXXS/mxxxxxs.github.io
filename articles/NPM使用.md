@@ -14,3 +14,6 @@
 
 `nrm use taobao`
 
+# 解决一堆镜像源的繁琐配置
+
+使用 [mirror-config-china](https://www.npmjs.com/package/mirror-config-china), 安装后会将一堆镜像源写入~/.npmrc, 不用再手动维护

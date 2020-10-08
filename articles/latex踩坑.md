@@ -272,3 +272,14 @@ miktex装包的位置`C:\Program Files\MiKTeX 2.9\scripts`
 ## 奇偶页设置
 
 需要`\documentclass[a4paper, twoside]{article}`加上`twoside`
+
+`twoside`模式的页面奇偶页面margin不同, 需要自定义页边距
+
+# 页边距设置
+
+使用包`geometry`来设置, 正如该包所描述
+
+>  To  set  dimensions  for  page  layout  in  LATEX  is  not  straightforward.  
+
+手动调整很不方便, 最好用一些包来完成
+

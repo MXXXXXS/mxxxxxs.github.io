@@ -165,4 +165,4 @@
   } from 'express'
   ```
 
-  
+- interface和 type 的区别, [参考](https://www.typescriptlang.org/docs/handbook/advanced-types.html#interfaces-vs-type-aliases). 主要区别是 interface 可以添加新的属性, 可扩展, 更符合"开闭原则"(*be open for extension, but closed for modification*)
